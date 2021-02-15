@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <link rel="stylesheet" href="filter.css">
+    <script src="filter.js" defer></script>
+</head>
+<body>
+    <form>
+        <div id="drikkevelger" class="class_drikke">
+            <h2>Drikke</h2>
+            <label for="litendrikke"> Liten (25,-) </label>
+            <input type="radio" name="drikke" id="litendrikke" value="drikke_liten">
+        <br>
+            <label for="stordrikke"> Stor (35,-) </label>
+            <input type="radio" name="drikke" id="stordrikke" value="drikke_stor">
+        <br>
+        </div>
+
+        <div id="matvelger" class="class_food">
+            <h2>Mat</h2>
+            <label for="polse_brod"><b> Pølse (30,-) </b><br> m/ brød </label>
+            <input type="radio" name="mat" id="polse_brod" value="polse_brod">
+            <label for="polse_lompe"> m/lompe </label>
+            <input type="radio" name="mat" id="polse_lompe" value="polse_lompe">
+        <br>
+        <br>
+            <label for="hamburger"><b> Hamburger (80,-) </b></label>
+            <input type="radio" name="mat" value="hamburger" id="hamburger">
+            <br>
+                <label for="ost"> +ost (5kr) </label>
+                <input type="checkbox" name="hamburger_ost" id="ost" value="_ost">
+                <label for="bacon"> +bacon (10kr) </label>
+                <input type="checkbox" name="hamburger_bacon" id="bacon" value="_bacon">
+        <br>
+        <br>
+            <label for="fries"><b> Legg til pommes frittes (30,-) </b></label>
+            <input type="checkbox" name="pommes" id="fries" value="pommes">
+        <br> 
+        </div>
+
+        <button type="button" id="submit">Bestill</button>
+        <button type="button" id="totalRev">Summer økonomisk info</button>
+        <button type="button" id="currCount">Varetelling</button>
+    </form>
+</body>
+</html>
