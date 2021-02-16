@@ -1,0 +1,12 @@
+body {background-color: gainsboro;}
+#can1 {
+    background-color: gainsboro;
+    border: solid 1px black;  
+    background: #5a1010;
+}
+
+#label1 {
+    font-size: 16px;
+    margin-left: 120px;
+    background-color: gainsboro;
+}
