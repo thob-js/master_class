@@ -1,13 +1,16 @@
+const outputSum = document.querySelector("#outputSum");
+const tBody = document.querySelector("#tableOutput");
+
 var alleBestillinger = [];
 var totalOmsetning = 0;
 var bestillingNr = 0;
 
 var stock = {
-    hamburger: 100,
-    polse: 100,
-    liten_drikke: 100,
-    stor_drikke: 100,
-    pommes: 100
+    hamburger: 20,
+    polse: 20,
+    liten_drikke: 20,
+    stor_drikke: 20,
+    pommes: 20
 };
 
 var price = {
@@ -26,6 +29,7 @@ class Bestilling{
         this.side = _side;
         this.pris = this.orderCost;
         this.updateStock();
+        this.print();
     }
 
     get orderCost() {
@@ -36,13 +40,34 @@ class Bestilling{
     }
 
     updateStock() {
-        stock[this.rett]+= -1;
-        stock[this.drikke]+= -1;
-        stock[this.side]+= -1;
+        stock[this.rett]--;
+        stock[this.drikke]--;
+        stock[this.side]--;
+
+        if(stock[this.drikke]<10) {
+            window.alert("lav stock av "+this.drikke);
+        }
+        if(stock[this.rett]<10) {
+            window.alert("lav stock av "+this.rett);
+        }
+        if(stock[this.side]<10) {
+            window.alert("lav stock av "+this.side);
+        }
 
         console.log(stock[this.rett]);
         console.log(stock[this.drikke]);
         console.log(stock[this.side]);
+    }
+
+    print() {
+        tBody.innerHTML += `<tr>
+            <td> ${this.nr} </td>
+            <td> ${this.drikke} </td>
+            <td> ${this.rett} </td>
+            <td> ${this.side} </td>
+            <td> ${this.pris},- </td>
+            <td> ${this.pris/100*15},- </td>
+        </tr>\n`;
     }
 }
 
@@ -56,7 +81,11 @@ function newOrder(rett,drikke,side) {
     console.log("omsetning: ",totalOmsetning);
 }
 
+const outputStock = document.querySelector("#outputStock");
 window.addEventListener('load', function fnLoad() {
     newOrder('hamburger','stor_drikke','pommes');
     newOrder('polse','liten_drikke','pommes');
+
+    let stockValues = JSON.stringify(stock);
+    outputStock.innerHTML = "Varelager:"+stockValues;
 });
