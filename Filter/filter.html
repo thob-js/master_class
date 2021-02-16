@@ -10,64 +10,75 @@
 </head>
 <body>
     <form>
-        <div id="drikkevelger" class="class_drikke">
-            <h2>Drikke</h2>
-            <label for="litendrikke"> Liten (25,-) </label>
-            <input type="radio" name="drikke" id="litendrikke" value="drikke_liten">
-        <br>
-            <label for="stordrikke"> Stor (35,-) </label>
-            <input type="radio" name="drikke" id="stordrikke" value="drikke_stor">
-        <br>
-        </div>
-
-        <div id="matvelger" class="class_food">
-            <h2>Mat</h2>
-            <label for="polse_brod"><b> Pølse (30,-) </b><br> m/ brød </label>
-            <input type="radio" name="mat" id="polse_brod" value="polse_brod">
-            <label for="polse_lompe"> m/lompe </label>
-            <input type="radio" name="mat" id="polse_lompe" value="polse_lompe">
-        <br>
-        <br>
-            <label for="hamburger"><b> Hamburger (80,-) </b></label>
-            <input type="radio" name="mat" value="hamburger" id="hamburger">
-            <br>
-                <label for="ost"> +ost (5kr) </label>
-                <input type="checkbox" name="hamburger_ost" id="ost" value="_ost">
-                <label for="bacon"> +bacon (10kr) </label>
-                <input type="checkbox" name="hamburger_bacon" id="bacon" value="_bacon">
-        <br>
-        <br>
-            <label for="fries"><b> Legg til pommes frittes (30,-) </b></label>
-            <input type="checkbox" name="pommes" id="fries" value="pommes">
-        <br> 
-        </div>
-
-        <button type="button" id="submit">Bestill</button>
-        <button type="button" id="totalRev">Summer økonomisk info</button>
-        <button type="button" id="currCount">Varetelling</button>
-        <br>
-        <div id="output">
-            <table>
+        <fieldset>
+            <legend><h2>Sett sammen din bestilling</h2></legend>
+            <fieldset>
+                <legend><h1> Velg Drikke </h1></legend>
+                    <label for="litendrikke"> Liten (25,-) </label>
+                    <input type="radio" name="drikke" id="litendrikke" value='liten_drikke'>
                 <br>
-            <th>Ordre Nr.</th><th>Drikke</th><th>Hovedrett</th><th>Siderett</th><th>Totalpris</th><th>Hvorav mva</th>
-                <tbody id="tableOutput">
-                   
-                    <!-- Table content -->
+                    <label for="stordrikke"> Stor (35,-) </label>
+                    <input type="radio" name="drikke" id="stordrikke" value='stor_drikke'>
+                <br>
+            </fieldset>
+
+            <fieldset>
+                <legend><h1> Velg Mat </h1></legend>
+                    <label for="polse_brod"><b> Pølse (30,-) </b><br> m/ brød </label>
+                        <input type="radio" name="mat" id="polse" value='polse'>
+                <br>
+                <br>
+                    <label for="hamburger"><b> Hamburger (80,-) </b></label>
+                        <input type="radio" name="mat" id="hamburger" value='hamburger'>
+                <br>
+                    <label for="ost"> +ost (5kr) </label>
+                        <input type="checkbox" name="ekstra" id="ost" value='ost'>
+                    <label for="bacon"> +bacon (10kr) </label>
+                        <input type="checkbox" name="ekstra" id="bacon" value='bacon'>
+                <br>
+            </fieldset>
+
+                <br>
+                    <label for="fries"><b> Legg til pommes frittes? (30,-) </b></label>
+                        <input type="checkbox" name="side" id="fries" value='pommes'>
+                <br>
+                <br>
+                <button type="button" id="submit">Bestill</button>
+
+        </fieldset>
+     <br>
+        <div id="output">
+            <p><b>Alle Bestillinger:</b></p>
+            <table>
+                <th>Ordre Nr.</th><th>Drikke</th><th>Hovedrett</th><th>Siderett</th><th>Totalpris</th><th>Hvorav mva</th><th>Ekstra</th>
+                    <tbody id="tableOutput">
                     
-                </tbody>
+                        <!-- Table content -->
+                        
+                    </tbody>
             </table>
-            <br>
-            <div id="outputSum">
+             <br>
 
-                <!-- omsetning -->
+            <fieldset>
+                <legend><b>Økonomisk info</b></legend>
+                    <div id="outputSum">
 
-            </div>
-            <br>
-            <div id="outputStock">
+                        <!-- omsetning -->
 
-                <!-- stock -->
+                    </div>
+                <br>
+            </fieldset>
 
-            </div>
+            <fieldset>
+                <legend><b>Varelager</b></legend>
+                    <div id="outputStock">
+
+                        <!-- stock -->
+
+                    </div>
+            </fieldset>
+
+             <br>
         </div>
     </form>
 </body>
