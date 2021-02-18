@@ -17,8 +17,6 @@ var stock = {
     liten_drikke: 20,
     stor_drikke: 20,
     pommes: 20,
-    ost: 20,
-    bacon: 20
 };
 
 var price = {
