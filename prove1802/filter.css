@@ -1,0 +1,11 @@
+html, body { font-family: arial, sans-serif; }
+table { border-collapse: collapse; }
+
+table tr td, th {
+  border: 1px solid #000;
+  padding: 1px;
+}
+
+fieldset h1 {
+  font-size: large;
+}

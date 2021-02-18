@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="filter.css">
+    <script src="prove1802.js" defer></script>
+</head>
+<body>
+    <label for="registrering">Registreringsnummer</label>
+        <input type="text" name="registrering" id="registrering"></input>
+    <fieldset>
+        <legend>Type bil</legend>
+        <label for="elbil">El-Bil</label>
+        <input type="radio" name="typebil" id="elbil" value="elbil">
+        <label for="personbil">Ordinær</label>
+        <input type="radio" name="typebil" id="personbil" value="personbil">
+        <label for="lastebil">Lastebil</label>
+        <input type="radio" name="typebil" id="lastebil" value="lastebil">
+    </fieldset>
+    <fieldset>
+        <label for="brikke">Jeg har brikke</label>
+        <input type="checkbox" name="brikke" id="brikke" value="true">
+    </fieldset>
+    <label for="passeringer">Antall Passeringer</label>
+    <input type="number" name="passeringer" id="passeringer">
+    <br>
+    <button type="button" id="submit">Legg til</button>
+    <br>
+
+
+    <label for="inputregistrering">Registreringsnummer</label>
+        <input type="text" name="inputregistrering" id="inputregistrering"></input>
+    <div id="output2">
+        
+    </div>
+    <div id="output">
+        <table>
+            <th>Passering Nr</th><th>Registreringsnr.</th><th>Type bil</th><th>Har brikke</th><th>Antall</th><th>Pris</th>
+                <tbody id="tableOutput">
+                
+                    <!-- Table content -->
+                    
+                </tbody>
+        </table>
+    </div>
+</body>
+</html>
